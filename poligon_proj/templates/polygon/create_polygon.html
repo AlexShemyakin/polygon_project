@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5"> 
+  <div class="row justify-content-center">
+    <div class="col-md-8 p-5">
+        <h3>Координаты</h3>
+    <form>
+        <label for="Широта">Широта:</label><br>
+        <input type="text" id="latitude" name="latitude"><br>
+        <label for="Долгота">Долгота:</label><br>
+        <input type="text" id="longitude" name="longitude">
+    </form><br>
+
+    <button type="button" onclick="copyContent()">
+        Добавить
+    </button><br><br><br>
+    <script>
+        function copyContent() {
+            var latitude = document.getElementById("latitude").value;
+            var longitude = document.getElementById("longitude").value;
+            var target = document.getElementById("polygon").value;
+            polygon.innerHTML += ' ' + latitude + ' ' + longitude;
+        }
+    </script>
+        
+        <form method="post" enctype="multipart/form-data">
+            {% include 'includes/form_fields.html' %}
+            <textarea id="polygon" name="polygon" rows="4" cols="50"></textarea><br><br>
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>        
+        </form>
+      </div> 
+    </div>
+  </div>  
+</div>
+{% endblock %}
