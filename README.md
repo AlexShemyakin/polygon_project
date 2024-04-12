@@ -11,16 +11,27 @@ git clone git@github.com:AlexShemyakin/polygon_project.git
 
 ```
 python -m venv venv
-```
-
-```
 source venv/bin/activate
-```
-
-```
 python -m pip install --upgrade pip
 ```
 
+### Выполнить миграции и сбор статики:
+
+```
+cd ../poligon_proj
+python manage.py migrate
+python manage.py collectstatic
+```
+
+### Создать суперпользователя для администрирования сайта:
+
+```
+python manage.py createsuperuser
+```
+Теперь локальный сервер доступен по адресу http://127.0.0.1:8000/
+И страница администрирования http://127.0.0.1:8000/admin/
+
+## Запуск проекта через контейнеры
 ### Записать переменные окружения в .env. Пример приведен в .env_example.
 
 ### Для локального запуска следует запустить docker-compose.yml:
@@ -43,7 +54,7 @@ sudo docker compose -f docker-compose.production.yml exec backend python manage.
 ### Создать суперпользователя для доступа к администрированию сайта (При успешном создании контейнеров):
 
 ```
-cd ../foodgram
+cd ../poligon_proj
 python manage.py createsuperuser
 ```
 Теперь локальный сервер доступен по адресу http://127.0.0.1:8000/
@@ -58,13 +69,13 @@ python manage.py createsuperuser
 ### POST выполняется по следующему запросу
 
 ```
-  http://127.0.0.1:8000/api/polygon/
+http://127.0.0.1:8000/api/polygon/
 ```
 
 ### PATCH выполняется по следующему запросу
 
 ```
-  http://127.0.0.1:8000/api/polygon/{id}/
+http://127.0.0.1:8000/api/polygon/{id}/
 ```
 
 #### При POST и PATCH запросах, необходимо вводить координаты с первым пробелом 
@@ -79,7 +90,7 @@ python manage.py createsuperuser
 ### DELETE выполняется по следующему запросу
 
 ```
-  http://127.0.0.1:8000/api/polygon/{id}/
+http://127.0.0.1:8000/api/polygon/{id}/
 ```
 
 ## Автор проекта
