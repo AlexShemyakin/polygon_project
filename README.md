@@ -14,7 +14,7 @@ python -m venv venv
 source venv/bin/activate
 python -m pip install --upgrade pip
 ```
-
+### Записать переменные окружения в .env. Пример приведен в .env_example.
 ### Выполнить миграции и сбор статики:
 
 ```
@@ -32,8 +32,6 @@ python manage.py createsuperuser
 И страница администрирования http://127.0.0.1:8000/admin/
 
 ## Запуск проекта через контейнеры
-### Записать переменные окружения в .env. Пример приведен в .env_example.
-
 ### Для локального запуска следует запустить docker-compose.yml:
 
 ```
